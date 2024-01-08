@@ -58,6 +58,10 @@ stages:
     container: mlops
     timeoutInMinutes: 0
     steps:
+    
+    - script: |
+        pip install cryptography
+        
     - task: AzureCLI@1
       inputs:
         azureSubscription: '$(WORKSPACE_SVC_CONNECTION)'
